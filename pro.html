@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PullMate Pro — Supercharge your GitHub PR reviews</title>
+  <meta name="description" content="Upgrade to PullMate Pro for unlimited private inline notes, review time tracking, custom checklists, and Markdown export." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%2314120E'/%3E%3Cg fill='%23C8B890'%3E%3Crect x='28' y='36' width='42' height='10' rx='4'/%3E%3Crect x='28' y='59' width='56' height='10' rx='4'/%3E%3Crect x='28' y='82' width='32' height='10' rx='4'/%3E%3C/g%3E%3Cpath d='M74 80 L89 95 L106 54' fill='none' stroke='%231A6A38' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: -1; opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px; pointer-events: none;
+    }
+    :root {
+      --bg-primary: #0d1117; --bg-secondary: #161b22; --bg-tertiary: #21262d;
+      --bg-card: #161b22; --bg-card-hover: #1c2128;
+      --text-primary: #e6edf3; --text-secondary: #8b949e; --text-muted: #6e7681;
+      --accent-gold: #0969da; --accent-gold-dim: #0860ca;
+      --accent-green: #2ea043; --accent-green-bright: #3fb950;
+      --accent-blue: #0969da; --border: #30363d; --border-hover: #454c54;
+      --radius: 12px; --radius-lg: 20px; --max-width: 1200px;
+    }
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0;
+      background: rgba(13, 17, 23, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent; transition: border-color 0.3s;
+    }
+    nav.scrolled { border-color: var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+      color: var(--text-primary); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem;
+    }
+    .nav-logo svg { width: 32px; height: 32px; flex-shrink: 0; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-secondary); font-size: 0.875rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--accent-gold); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 24px;
+      background: var(--accent-blue); color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 0.875rem; border: none; border-radius: 8px;
+      cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(9, 105, 218, 0.25); }
+    .section { padding: 120px 0 80px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent-gold); margin-bottom: 16px;
+    }
+    .section-label::before { content: ''; width: 24px; height: 1.5px; background: var(--accent-gold-dim); }
+    .section-title { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 16px; }
+    .section-subtitle { color: var(--text-secondary); font-size: 1.0625rem; max-width: 600px; line-height: 1.7; }
+    .hero {
+      padding: 140px 0 60px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(9, 105, 218, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); margin-bottom: 16px; }
+    .hero h1 .highlight { color: var(--accent-gold); }
+    .hero p { font-size: 1.0625rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;
+      max-width: 800px; margin-left: auto; margin-right: auto;
+    }
+    .pricing-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 40px 32px; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .pricing-card.featured {
+      border-color: var(--accent-blue); background: var(--bg-secondary);
+    }
+    .pricing-card.featured::before {
+      content: 'Most Popular'; position: absolute; top: 12px; right: 12px;
+      background: var(--accent-blue); color: #fff; font-size: 0.625rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 100px;
+    }
+    .pricing-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .pricing-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+    .pricing-price { font-family: 'Syne', sans-serif; font-size: 2.75rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+    .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+    .pricing-desc { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 24px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 10px; font-size: 0.875rem; color: var(--text-secondary);
+    }
+    .pricing-features li svg { flex-shrink: 0; color: var(--accent-green-bright); }
+    .pricing-features li.muted { opacity: 0.4; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
+      border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600;
+      font-size: 0.9375rem; text-decoration: none; cursor: pointer;
+      transition: all 0.25s; border: none; width: 100%; justify-content: center;
+    }
+    .btn-primary { background: var(--accent-blue); color: #ffffff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(9, 105, 218, 0.3); }
+    .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--text-secondary); transform: translateY(-2px); }
+    .features-compare { margin-top: 80px; }
+    .features-compare h2 { text-align: center; margin-bottom: 32px; font-size: 1.75rem; }
+    .compare-table { width: 100%; border-collapse: collapse; }
+    .compare-table th, .compare-table td {
+      padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    .compare-table th {
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.8125rem;
+      text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);
+    }
+    .compare-table th:first-child, .compare-table td:first-child { font-weight: 500; color: var(--text-primary); }
+    .compare-table th:not(:first-child), .compare-table td:not(:first-child) { text-align: center; }
+    .compare-table td svg { vertical-align: middle; }
+    .check { color: var(--accent-green-bright); }
+    .dash { color: var(--text-muted); }
+    .pro-tag {
+      display: inline-block; font-size: 0.625rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 2px 8px; border-radius: 4px;
+      background: rgba(9, 105, 218, 0.08); color: var(--accent-gold);
+      border: 1px solid rgba(88, 166, 255, 0.1);
+    }
+    .faq { margin-top: 80px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .faq h2 { text-align: center; margin-bottom: 32px; font-size: 1.75rem; }
+    .faq-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .faq-q { font-weight: 600; margin-bottom: 6px; font-size: 0.9375rem; }
+    .faq-a { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+    footer { border-top: 1px solid var(--border); padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.8125rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { text-decoration: none; color: var(--text-muted); font-size: 0.8125rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-secondary); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .compare-table th, .compare-table td { padding: 10px 12px; font-size: 0.75rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="128" height="128" rx="28" fill="#14120E"/>
+          <g fill="#C8B890">
+            <rect x="28" y="36" width="42" height="10" rx="4"/>
+            <rect x="28" y="59" width="56" height="10" rx="4"/>
+            <rect x="28" y="82" width="32" height="10" rx="4"/>
+          </g>
+          <path d="M74 80 L89 95 L106 54" fill="none" stroke="#1A6A38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        PullMate
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pro.html" class="active">Pro</a></li>
+        <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Add to Chrome</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="section-label" style="justify-content:center;">Pricing</div>
+        <h1>Simple pricing.<br/><span class="highlight">Pro when you need it.</span></h1>
+        <p>All the core review tools are free forever. Upgrade to Pro for unlimited notes, time tracking, and custom checklists.</p>
+      </div>
+      <div class="pricing-grid reveal">
+        <div class="pricing-card">
+          <div class="pricing-name">Free</div>
+          <div class="pricing-price">$0<span>/forever</span></div>
+          <div class="pricing-desc">Everything you need for individual PR reviews.</div>
+          <ul class="pricing-features">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Progress Tracker</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Pending Comment Badge</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Bot Comment Filter</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> File Filter Panel</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Keyboard Shortcuts</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Review Checklist (General)</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Private Inline Notes (2 per PR)</li>
+          </ul>
+          <a href="#" class="btn btn-secondary">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-name">Pro</div>
+          <div class="pricing-price">$5<span>/month</span></div>
+          <div class="pricing-desc">For power reviewers who need the full toolkit.</div>
+          <ul class="pricing-features">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Free</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Unlimited Private Inline Notes</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Review Time Tracker</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Security & Performance Templates</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom Checklist Templates</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Markdown Notes Export</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Upgrade to Pro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features-compare" id="compare">
+    <div class="container reveal">
+      <h2>Feature comparison</h2>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th>Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Review Progress Tracker</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>Pending Comment Badge</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>Bot Comment Filter</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>File Filter Panel</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>Keyboard Shortcuts</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>Review Checklist</td><td>General template</td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> All templates + custom</td></tr>
+          <tr><td>Private Inline Notes</td><td>2 per PR</td><td>Unlimited</td></tr>
+          <tr><td>Review Time Tracker</td><td><span class="dash">&mdash;</span></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+          <tr><td>Markdown Notes Export</td><td><span class="dash">&mdash;</span></td><td><svg class="check" width="18" height="18" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container reveal">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">How does the trial work?</div>
+        <div class="faq-a">You can use up to 2 private inline notes per PR for free. Upgrade to Pro for unlimited notes, time tracking, and all checklist templates.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I purchase Pro?</div>
+        <div class="faq-a">After installing PullMate, open the extension settings page and click "Activate Pro License". You'll be redirected to our payment processor (Lemon Squeezy) to complete your purchase.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I switch between plans?</div>
+        <div class="faq-a">Yes. If your Pro license expires, you gracefully downgrade to the Free tier. Your data (notes, settings) is preserved for 90 days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a lifetime option?</div>
+        <div class="faq-a">Yes, lifetime licenses are available. They never expire and include all future Pro features within the current major version.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">&copy; <span id="year"></span> PullMate. Made for developers who care about code quality.</div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">Privacy</a></li>
+        <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">Changelog</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const nav = document.getElementById('nav');
+    document.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
