@@ -10,12 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Initial release
-- PR Detection & Activation (F01)
-- Review Progress Tracker (F02)
-- Pending Comment Badge (F03)
-- Bot Comment Filter (F04)
-- Attention Indicator (F05)
-- File Filter Panel (F06)
-- Keyboard Shortcuts (F07)
-- Onboarding Flow (F14)
-- Sentry error monitoring
+- Persistent Review Sidebar — collapsible sidebar with progress, timer, and quick actions
+- PR Detection & Navigation — auto-activates on GitHub pull request pages, handles SPA navigation
+- Review Progress Tracker — track viewed/unviewed files with persistent state
+- Pending Comment Badge — shows pending review comments count on the extension icon
+- Bot Comment Filter — toggle to hide bot comments in discussions
+- File Filter Panel — filter files by status (viewed/unviewed/changed)
+- Keyboard Shortcuts — customizable shortcuts for navigation and actions
+- Private Inline Notes — add private notes to PR lines (2 per PR on trial)
+- Review Checklist — markdown checklist for review tasks
+- Review Time Tracker — track time spent on reviews (Pro feature)
+- Onboarding Flow — first-install walkthrough
+- Pro License Activation — Lemon Squeezy license key activation with 7-day grace period
+- Settings Page — configure shortcuts, manage license, clear data
+- Popup UI — quick status, sidebar toggle, settings link
+- Sentry Error Monitoring — anonymous crash reporting with data sanitization
+- Dark Mode Support — follows system preference in all UI surfaces

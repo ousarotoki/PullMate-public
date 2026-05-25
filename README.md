@@ -1,17 +1,22 @@
 # PullMate
 
-> Chrome extension that supercharges GitHub pull request reviews with a persistent sidebar, progress tracking, file filtering, bot comment hiding, and private inline notes.
+> Chrome extension that supercharges GitHub pull request reviews with a persistent sidebar, progress tracking, file filtering, bot comment hiding, review checklists, time tracking, and private inline notes.
 
 [**Visit the landing page &rarr;**](./landing/index.html)
 
 ## Features
 
-- **Review Progress Tracker** — Syncs with GitHub's "Viewed" toggle; shows progress in sidebar
-- **File Filter Panel** — Reviewed / Unreviewed / Pending sections with click-to-navigate
-- **Bot Comment Filter** — Hide bot noise with one click or `Alt+B`
-- **Pending Comment Badge** — Never forget to submit your review
-- **Keyboard Shortcuts** — `Alt+N/P/M/B/T` — fully configurable
-- **Private Inline Notes** *(Pro)* — Add notes on diff lines; Markdown export
+- **Persistent Review Sidebar** — progress tracker, time tracker, and quick actions on every PR
+- **Review Progress Tracker** — syncs with GitHub's "Viewed" toggle; shows progress in sidebar
+- **File Filter Panel** — reviewed / unreviewed / pending sections with click-to-navigate
+- **Bot Comment Filter** — hide bot noise with one click or `Alt+B`
+- **Pending Comment Badge** — never forget to submit your review
+- **Review Checklist** — built-in templates (General, Security, Performance) with custom checklists
+- **Private Inline Notes** *(Pro)* — add notes on diff lines; Markdown export
+- **Review Time Tracker** *(Pro)* — auto-track time spent per PR with idle detection
+- **Keyboard Shortcuts** — `Alt+N/P/M/B/T/C` — fully configurable
+- **Dark Mode** — syncs with GitHub's theme automatically
+- **Onboarding Tour** — 5-step walkthrough on first install
 
 ## Quick Start
 
@@ -23,9 +28,16 @@
 
 ```bash
 npm install
-npm run build   # builds dist/
-npm run dev     # watch mode
-npm test        # Jest with coverage
+cp .env.example .env   # configure SENTRY_DSN and store URLs
+npm run build          # produces dist/
+npm run dev            # watch mode
+npm test               # Jest with coverage
+npm run lint           # ESLint
+npm run format         # Prettier
 ```
 
-Built with: React 18, Chrome Manifest V3, Webpack 5, Jest + Playwright.
+Load `dist/` as an unpacked extension in Chrome (`chrome://extensions` → Load unpacked).
+
+## Tech Stack
+
+Chrome Extension Manifest V3, React 18, Webpack 5, Babel, Sentry, Lemon Squeezy, Jest + Playwright.

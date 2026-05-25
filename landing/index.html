@@ -718,7 +718,7 @@
     <div class="container hero-grid">
       <div class="hero-content reveal">
         <div class="hero-badge">
-          <span>v1.0.0 &middot; Chrome Extension</span>
+          <span>v1.0.0 &middot; Chrome Extension &middot; Free + Pro</span>
         </div>
         <h1>
           Review PRs at<br/>
@@ -726,7 +726,8 @@
         </h1>
         <p>
           PullMate adds a persistent sidebar to every GitHub pull request &mdash; tracking
-          your progress, filtering files, hiding bot noise, and keeping private notes.
+          your progress, filtering files, hiding bot noise, managing checklists,
+          tracking review time, and keeping private notes.
           All without leaving the page.
         </p>
         <div class="hero-buttons">
@@ -898,6 +899,30 @@
           <h3>Private Inline Notes</h3>
           <p>Add private notes on individual diff lines. Small icon appears next to line numbers. Notes panel with search and Markdown export. 2 notes free, unlimited with Pro.</p>
         </div>
+        <div class="feature-card reveal">
+          <span class="feature-tag free">Free</span>
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+              <rect x="1" y="2" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/>
+              <path d="M4 5h8M4 8h5M4 11h6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="12.5" cy="12.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M12.5 11.5v2M11.5 12.5h2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Review Checklist</h3>
+          <p>Built-in review templates for General, Security, and Performance reviews. Drag-and-drop overlay, checkbox progress tracking, and custom template support (Pro).</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-tag pro">Pro</span>
+          <div class="feature-icon">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3" fill="none"/>
+              <path d="M8 4v4l2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Review Time Tracker</h3>
+          <p>Auto-tracks time spent per PR with idle detection and tab-awareness. View your total review time directly in the sidebar. 90-day data retention.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -956,20 +981,20 @@
   <section class="stats">
     <div class="container stats-grid">
       <div class="stat-item reveal">
-        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-number" data-target="6">0</div>
         <div class="stat-label">Keyboard shortcuts</div>
       </div>
       <div class="stat-item reveal">
+        <div class="stat-number" data-target="9">0</div>
+        <div class="stat-label">Free features</div>
+      </div>
+      <div class="stat-item reveal">
         <div class="stat-number" data-target="100">0</div>
-        <div class="stat-label">% free tier features</div>
+        <div class="stat-label">% GitHub PR coverage</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-number" data-target="1">0</div>
-        <div class="stat-label">Supported browser (Chrome)</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="stat-number" data-target="1">0</div>
-        <div class="stat-label">Focus (PRs at a time)</div>
+        <div class="stat-number" data-target="2">0</div>
+        <div class="stat-label">Pro features</div>
       </div>
     </div>
   </section>
@@ -1069,7 +1094,7 @@
             const eased = 1 - Math.pow(1 - progress, 3);
             entry.target.textContent = Math.round(eased * target);
             if (progress < 1) requestAnimationFrame(update);
-            else entry.target.textContent = target + (target === 100 ? '%' : '');
+            else entry.target.textContent = target;
           }
           requestAnimationFrame(update);
         }
