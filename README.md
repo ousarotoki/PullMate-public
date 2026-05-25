@@ -2,7 +2,7 @@
 
 > Chrome extension that supercharges GitHub pull request reviews with a persistent sidebar, progress tracking, file filtering, bot comment hiding, review checklists, time tracking, and private inline notes.
 
-[**Visit the landing page &rarr;**](./landing/index.html)
+[**Visit the landing page &rarr;**](https://ousarotoki.github.io/PullMate-public/)
 
 ## Features
 
