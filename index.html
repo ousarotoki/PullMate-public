@@ -1018,17 +1018,44 @@
     </div>
   </section>
 
+  <!-- ── Permissions ── -->
+  <section class="section" id="permissions" style="padding:60px 0;border-top:1px solid var(--border);">
+    <div class="container" style="max-width:680px;">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label" style="justify-content:center;">Transparency</div>
+        <h2 class="section-title" style="font-size:1.5rem;">Why PullMate needs these permissions</h2>
+      </div>
+      <div style="margin-top:32px;display:flex;flex-direction:column;gap:20px;">
+        <div class="feature-card" style="padding:20px;">
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;margin-bottom:4px;">Access to github.com pages</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.6;">Required to detect pull request pages and inject the sidebar, progress tracker, and other review tools. PullMate only activates on PR pages — it does not read or modify other GitHub content.</p>
+        </div>
+        <div class="feature-card" style="padding:20px;">
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;margin-bottom:4px;">Local storage (chrome.storage)</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);line-height:1.6;">All your data — review progress, notes, settings, and license key — is stored locally in your browser. Nothing is sent to external servers except anonymous error reports (if enabled) and license validation with Lemon Squeezy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Footer ── -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-copy">
-        &copy; <span id="year"></span> PullMate. Made for developers who care about code quality.
+    <div class="container" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);line-height:1.6;max-width:600px;margin:0 auto;">
+        PullMate is an independent tool and is not affiliated with or endorsed by GitHub Inc. GitHub is a registered trademark of GitHub, Inc.
       </div>
-      <ul class="footer-links">
-        <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy</a></li>
-        <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/changelog/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
-      </ul>
+      <div class="footer-inner">
+        <div class="footer-copy">
+          &copy; <span id="year"></span> PullMate. Made for developers who care about code quality.
+        </div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/TERMS.md" target="_blank" rel="noopener">Terms</a></li>
+          <li><a href="mailto:pullmate@ousaro.com">Contact</a></li>
+          <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/changelog/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 

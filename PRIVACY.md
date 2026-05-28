@@ -21,4 +21,5 @@ When you activate a Pro license key, the key is sent to Lemon Squeezy for valida
 
 ## Contact
 
-For questions, open an issue at https://github.com/ousarotoki/PullMate-public
+- GitHub Issues: https://github.com/ousarotoki/PullMate-public
+- Email: ousarotokistudio@gmail.com
