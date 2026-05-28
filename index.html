@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%2314120E'/%3E%3Cg fill='%23C8B890'%3E%3Crect x='28' y='36' width='42' height='10' rx='4'/%3E%3Crect x='28' y='59' width='56' height='10' rx='4'/%3E%3Crect x='28' y='82' width='32' height='10' rx='4'/%3E%3C/g%3E%3Cpath d='M74 80 L89 95 L106 54' fill='none' stroke='%231A6A38' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <meta property="og:title" content="PullMate — Supercharge your GitHub PR reviews" />
+  <meta property="og:description" content="A Chrome extension that adds a persistent sidebar to GitHub pull requests — tracking review progress, filtering files, hiding bot comments, and keeping private inline notes." />
+  <meta property="og:image" content="https://ousarotoki.github.io/PullMate-public/PullMate-preview.png" />
+  <meta name="theme-color" content="#0d1117" />
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -666,6 +670,7 @@
       .pro-highlight { grid-template-columns: 1fr; gap: 40px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .mockup-body img { border-radius: 0; }
+      #screenshots > .container > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
     }
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -678,6 +683,9 @@
       .hero-mockup { max-width: 100%; }
       .cta-buttons { flex-direction: column; align-items: center; }
       footer .footer-inner { flex-direction: column; text-align: center; }
+      #screenshots > .container > div:last-child { grid-template-columns: 1fr !important; }
+      #audience > .container > div:last-child { grid-template-columns: 1fr !important; }
+      #trust > .container > div:first-child { grid-template-columns: 1fr !important; gap: 24px !important; }
     }
   </style>
 </head>
@@ -725,14 +733,13 @@
           <span class="highlight">the speed of thought</span>
         </h1>
         <p>
-          PullMate adds a persistent sidebar to every GitHub pull request &mdash; tracking
-          your progress, filtering files, hiding bot noise, managing checklists,
-          tracking review time, and keeping private notes.
-          All without leaving the page.
+          Join early adopters using PullMate to review PRs faster and with more consistency.
+          A persistent sidebar tracks your progress, filters files, hides bot noise,
+          manages checklists, and keeps private notes &mdash; all without leaving the page.
         </p>
         <div class="hero-buttons">
           <a href="#" class="btn btn-primary">
-            Add to Chrome &mdash; Free
+            Get PullMate &mdash; Free
           </a>
           <a href="#features" class="btn btn-secondary">
             See all features
@@ -750,6 +757,36 @@
           <div class="mockup-body">
             <img src="PullMate-preview.png" alt="PullMate extension showing GitHub PR review sidebar with progress tracking, file filters, and private notes" />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Screenshots ── -->
+  <section class="section" id="screenshots" style="padding:60px 0;border-top:1px solid var(--border);">
+    <div class="container" style="text-align:center;">
+      <div class="reveal">
+        <div class="section-label" style="justify-content:center;">Inside PullMate</div>
+        <h2 class="section-title">Built for real PR workflows</h2>
+        <p class="section-subtitle" style="margin:0 auto 40px;">
+          Every feature is designed around how developers actually review code.
+        </p>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div class="feature-card" style="text-align:left;">
+          <div style="background:var(--bg-tertiary);border-radius:8px;height:140px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">&#128221;</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;">Private Inline Notes</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Add notes on specific diff lines. Search, filter, and export as Markdown.</p>
+        </div>
+        <div class="feature-card" style="text-align:left;">
+          <div style="background:var(--bg-tertiary);border-radius:8px;height:140px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">&#128203;</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;">Review Checklists</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Built-in templates for General, Security, and Performance. Drag-and-drop overlay.</p>
+        </div>
+        <div class="feature-card" style="text-align:left;">
+          <div style="background:var(--bg-tertiary);border-radius:8px;height:140px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-muted);">&#9201;</div>
+          <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9375rem;">Time Tracker</h3>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Auto-tracks time per PR with idle detection. Know exactly how long reviews take.</p>
         </div>
       </div>
     </div>
@@ -1008,12 +1045,60 @@
         on GitHub. No sign-up required.
       </p>
       <div class="cta-buttons">
-        <a href="#" class="btn btn-primary">
-          Add to Chrome &mdash; Free
-        </a>
+          <a href="#" class="btn btn-primary">
+            Get PullMate &mdash; Free
+          </a>
         <a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener" class="btn btn-secondary">
           View on GitHub
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Who is this for ── -->
+  <section class="section" id="audience" style="padding:60px 0;border-top:1px solid var(--border);">
+    <div class="container" style="max-width:680px;">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label" style="justify-content:center;">Who is this for</div>
+        <h2 class="section-title" style="font-size:1.5rem;">Built by developers, for developers</h2>
+      </div>
+      <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="feature-card" style="padding:16px;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">&#128188;</div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Senior engineers reviewing large PRs</p>
+        </div>
+        <div class="feature-card" style="padding:16px;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">&#128101;</div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Team leads handling review queues</p>
+        </div>
+        <div class="feature-card" style="padding:16px;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">&#128200;</div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">OSS maintainers reviewing community contributions</p>
+        </div>
+        <div class="feature-card" style="padding:16px;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:4px;">&#128737;</div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);">Security &amp; performance focused reviewers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Trust ── -->
+  <section class="section" id="trust" style="padding:40px 0;border-top:1px solid var(--border);">
+    <div class="container" style="max-width:680px;">
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;">
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;color:var(--accent-green-bright);margin-bottom:4px;">Local-first</div>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Data stays in your browser. No server required.</p>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;color:var(--accent-green-bright);margin-bottom:4px;">Open source</div>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Core extension code is publicly auditable on GitHub.</p>
+        </div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;color:var(--accent-green-bright);margin-bottom:4px;">Works on GitHub</div>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Activates directly on GitHub PR pages. No setup.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1050,10 +1135,10 @@
         </div>
         <ul class="footer-links">
           <li><a href="https://github.com/ousarotoki/PullMate-public" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/PRIVACY.md" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
           <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/TERMS.md" target="_blank" rel="noopener">Terms</a></li>
           <li><a href="mailto:pullmate@ousaro.com">Contact</a></li>
-          <li><a href="https://github.com/ousarotoki/PullMate-public/blob/main/changelog/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
         </ul>
       </div>
     </div>

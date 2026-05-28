@@ -44,4 +44,4 @@ These Terms may be updated from time to time. Continued use after changes consti
 For questions, refund requests, or support:
 
 - GitHub Issues: https://github.com/ousarotoki/PullMate-public
-- Email: pullmate@ousaro.com
+- Email: ousarotokistudio@gmail.com

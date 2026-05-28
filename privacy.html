@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PullMate</title>
+  <meta name="description" content="PullMate privacy policy — how your data is handled." />
+  <meta property="og:title" content="Privacy Policy — PullMate" />
+  <meta property="og:description" content="How PullMate handles your data." />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%2314120E'/%3E%3Cg fill='%23C8B890'%3E%3Crect x='28' y='36' width='42' height='10' rx='4'/%3E%3Crect x='28' y='59' width='56' height='10' rx='4'/%3E%3Crect x='28' y='82' width='32' height='10' rx='4'/%3E%3C/g%3E%3Cpath d='M74 80 L89 95 L106 54' fill='none' stroke='%231A6A38' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: #0d1117; color: #e6edf3; line-height: 1.7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0;
+      background: rgba(13,17,23,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+      color: #e6edf3; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem;
+    }
+    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: #8b949e; font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e6edf3; }
+    main { padding: 120px 0 60px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 32px; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; margin-top: 32px; margin-bottom: 8px; }
+    p { color: #8b949e; margin-bottom: 16px; font-size: 0.9375rem; }
+    ul { color: #8b949e; margin-bottom: 16px; padding-left: 20px; font-size: 0.9375rem; }
+    ul li { margin-bottom: 4px; }
+    footer { border-top: 1px solid #30363d; padding: 40px 0; margin-top: 60px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.8125rem; color: #6e7681; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { text-decoration: none; color: #6e7681; font-size: 0.8125rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #8b949e; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="28" fill="#14120E"/><g fill="#C8B890"><rect x="28" y="36" width="42" height="10" rx="4"/><rect x="28" y="59" width="56" height="10" rx="4"/><rect x="28" y="82" width="32" height="10" rx="4"/></g><path d="M74 80 L89 95 L106 54" fill="none" stroke="#1A6A38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PullMate
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pro.html">Pro</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>PullMate is a Chrome extension that enhances GitHub pull request reviews. It does not collect, store, or transmit any personal data to external servers beyond what is described below.</p>
+
+      <h2>Data Storage</h2>
+      <p>All user data (review progress, notes, settings, license information) is stored locally in your browser using <code>chrome.storage.local</code> and <code>chrome.storage.session</code>. No data is sent to any server by the extension itself.</p>
+
+      <h2>Error Reporting</h2>
+      <p>If enabled, anonymous error reports are sent to Sentry (<code>@sentry/browser</code>). These reports contain technical information about the error (stack trace, browser version) but no personal data, code content, or identifying information.</p>
+
+      <h2>License Validation</h2>
+      <p>When you activate a Pro license key, the key is sent to Lemon Squeezy for validation. No other personal information is transmitted.</p>
+
+      <h2>Third-Party Services</h2>
+      <ul>
+        <li><strong>Sentry</strong> — error monitoring (opt-in via extension settings)</li>
+        <li><strong>Lemon Squeezy</strong> — license key validation</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>GitHub Issues: <a href="https://github.com/ousarotoki/PullMate-public" style="color:#58a6ff;">github.com/ousarotoki/PullMate-public</a><br/>Email: pullmate@ousaro.com</p>
+    </div>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">&copy; <span id="year"></span> PullMate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pro.html">Pro</a></li>
+        <li><a href="https://github.com/ousarotoki/PullMate-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

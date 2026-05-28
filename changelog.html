@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog — PullMate</title>
+  <meta name="description" content="PullMate changelog — release notes and updates." />
+  <meta property="og:title" content="Changelog — PullMate" />
+  <meta property="og:description" content="Release notes and updates for PullMate." />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='28' fill='%2314120E'/%3E%3Cg fill='%23C8B890'%3E%3Crect x='28' y='36' width='42' height='10' rx='4'/%3E%3Crect x='28' y='59' width='56' height='10' rx='4'/%3E%3Crect x='28' y='82' width='32' height='10' rx='4'/%3E%3C/g%3E%3Cpath d='M74 80 L89 95 L106 54' fill='none' stroke='%231A6A38' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: #0d1117; color: #e6edf3; line-height: 1.7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0;
+      background: rgba(13,17,23,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px; text-decoration: none;
+      color: #e6edf3; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem;
+    }
+    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: #8b949e; font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e6edf3; }
+    main { padding: 120px 0 60px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 8px; }
+    .subtitle { color: #8b949e; margin-bottom: 40px; font-size: 0.9375rem; }
+    .version { margin-bottom: 32px; }
+    .version-header {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px;
+    }
+    .version-tag {
+      font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1.0625rem;
+    }
+    .version-date {
+      font-size: 0.8125rem; color: #6e7681;
+    }
+    .version ul {
+      list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px;
+    }
+    .version ul li {
+      font-size: 0.875rem; color: #8b949e; padding-left: 20px; position: relative;
+    }
+    .version ul li::before {
+      content: ''; position: absolute; left: 6px; top: 8px;
+      width: 5px; height: 5px; border-radius: 50%; background: #30363d;
+    }
+    footer { border-top: 1px solid #30363d; padding: 40px 0; margin-top: 60px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.8125rem; color: #6e7681; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { text-decoration: none; color: #6e7681; font-size: 0.8125rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #8b949e; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 128 128" fill="none"><rect width="128" height="128" rx="28" fill="#14120E"/><g fill="#C8B890"><rect x="28" y="36" width="42" height="10" rx="4"/><rect x="28" y="59" width="56" height="10" rx="4"/><rect x="28" y="82" width="32" height="10" rx="4"/></g><path d="M74 80 L89 95 L106 54" fill="none" stroke="#1A6A38" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        PullMate
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pro.html">Pro</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h1>Changelog</h1>
+      <p class="subtitle">All notable changes to PullMate.</p>
+
+      <div class="version">
+        <div class="version-header">
+          <span class="version-tag">v1.0.0</span>
+          <span class="version-date">2026-05-20</span>
+        </div>
+        <ul>
+          <li>Initial release</li>
+          <li>Persistent Review Sidebar &mdash; collapsible sidebar with progress, timer, and quick actions</li>
+          <li>PR Detection &amp; Navigation &mdash; auto-activates on GitHub pull request pages, handles SPA navigation</li>
+          <li>Review Progress Tracker &mdash; track viewed/unviewed files with persistent state</li>
+          <li>Pending Comment Badge &mdash; shows pending review comments count on the extension icon</li>
+          <li>Bot Comment Filter &mdash; toggle to hide bot comments in discussions</li>
+          <li>File Filter Panel &mdash; filter files by status (viewed/unviewed/changed)</li>
+          <li>Keyboard Shortcuts &mdash; customizable shortcuts for navigation and actions</li>
+          <li>Private Inline Notes &mdash; add private notes to PR lines (2 per PR on trial)</li>
+          <li>Review Checklist &mdash; markdown checklist for review tasks</li>
+          <li>Review Time Tracker &mdash; track time spent on reviews (Pro feature)</li>
+          <li>Onboarding Flow &mdash; first-install walkthrough</li>
+          <li>Pro License Activation &mdash; Lemon Squeezy license key activation with 7-day grace period</li>
+          <li>Settings Page &mdash; configure shortcuts, manage license, clear data</li>
+          <li>Popup UI &mdash; quick status, sidebar toggle, settings link</li>
+          <li>Sentry Error Monitoring &mdash; anonymous crash reporting with data sanitization</li>
+          <li>Dark Mode Support &mdash; follows system preference in all UI surfaces</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-copy">&copy; <span id="year"></span> PullMate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pro.html">Pro</a></li>
+        <li><a href="https://github.com/ousarotoki/PullMate-public">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
