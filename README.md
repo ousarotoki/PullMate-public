@@ -23,21 +23,3 @@
 1. Install from the [Chrome Web Store](#) (coming soon)
 2. Open any GitHub pull request
 3. The PullMate sidebar appears automatically on the right
-
-## Development
-
-```bash
-npm install
-cp .env.example .env   # configure SENTRY_DSN and store URLs
-npm run build          # produces dist/
-npm run dev            # watch mode
-npm test               # Jest with coverage
-npm run lint           # ESLint
-npm run format         # Prettier
-```
-
-Load `dist/` as an unpacked extension in Chrome (`chrome://extensions` → Load unpacked).
-
-## Tech Stack
-
-Chrome Extension Manifest V3, React 18, Webpack 5, Babel, Sentry, Lemon Squeezy, Jest + Playwright.
