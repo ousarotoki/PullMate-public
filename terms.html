@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — PullMate</title>
-  <meta name="description" content="PullMate privacy policy — how your data is handled." />
-  <meta property="og:title" content="Privacy Policy — PullMate" />
-  <meta property="og:description" content="How PullMate handles your data." />
+  <title>Terms of Service — PullMate</title>
+  <meta name="description" content="PullMate terms of service and refund policy." />
+  <meta property="og:title" content="Terms of Service — PullMate" />
+  <meta property="og:description" content="PullMate terms of service, refund policy, and usage restrictions." />
   <meta name="theme-color" content="#0d1117" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,11 +37,13 @@
     }
     .nav-links a:hover { color: #e6edf3; }
     main { padding: 120px 0 60px; }
-    h1 { font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 32px; }
+    h1 { font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 8px; }
+    .subtitle { color: #8b949e; margin-bottom: 40px; font-size: 0.9375rem; }
     h2 { font-family: 'Syne', sans-serif; font-size: 1.25rem; margin-top: 32px; margin-bottom: 8px; }
     p { color: #8b949e; margin-bottom: 16px; font-size: 0.9375rem; }
     ul { color: #8b949e; margin-bottom: 16px; padding-left: 20px; font-size: 0.9375rem; }
     ul li { margin-bottom: 4px; }
+    a { color: #58a6ff; }
     footer { border-top: 1px solid #30363d; padding: 40px 0; margin-top: 60px; }
     .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-copy { font-size: 0.8125rem; color: #6e7681; }
@@ -66,26 +68,43 @@
   </nav>
   <main>
     <div class="container">
-      <h1>Privacy Policy</h1>
-      <p>PullMate is a Chrome extension that enhances GitHub pull request reviews. It does not collect, store, or transmit any personal data to external servers beyond what is described below.</p>
+      <h1>Terms of Service</h1>
+      <p class="subtitle">Last updated: May 2026</p>
 
-      <h2>Data Storage</h2>
-      <p>All user data (review progress, notes, settings, license information) is stored locally in your browser using <code>chrome.storage.local</code> and <code>chrome.storage.session</code>. No data is sent to any server by the extension itself.</p>
+      <h2>1. Acceptance</h2>
+      <p>By installing or using PullMate ("the Extension"), you agree to these Terms. If you do not agree, do not install or use the Extension.</p>
 
-      <h2>Error Reporting</h2>
-      <p>If enabled, anonymous error reports are sent to Sentry (<code>@sentry/browser</code>). These reports contain technical information about the error (stack trace, browser version) but no personal data, code content, or identifying information.</p>
+      <h2>2. Description</h2>
+      <p>PullMate is a Chrome extension that enhances GitHub pull request reviews with a sidebar, progress tracking, notes, and related tools. It is an independent project and is not affiliated with or endorsed by GitHub.</p>
 
-      <h2>License Validation</h2>
-      <p>When you activate a Pro license key, the key is sent to Lemon Squeezy for validation. No other personal information is transmitted.</p>
-
-      <h2>Third-Party Services</h2>
+      <h2>3. License &amp; Payments</h2>
+      <p>The Extension is offered under a freemium model:</p>
       <ul>
-        <li><strong>Sentry</strong> — error monitoring (opt-in via extension settings)</li>
-        <li><strong>Lemon Squeezy</strong> — license key validation</li>
+        <li><strong>Free tier</strong> — available at no cost with core features.</li>
+        <li><strong>Pro tier</strong> — paid license required for additional features (unlimited notes, time tracker, custom templates).</li>
+      </ul>
+      <p>Pro licenses are sold via Lemon Squeezy. Payment processing, tax handling, and invoicing are handled by Lemon Squeezy under their terms. License keys are delivered by email after purchase.</p>
+
+      <h2>4. Refund Policy</h2>
+      <p>Refunds for Pro license purchases are handled through Lemon Squeezy. You may request a refund within 14 days of purchase if the Extension does not function as described. To request a refund, contact support via the channels below. Lifetime license refunds follow the same 14-day policy.</p>
+
+      <h2>5. Usage Restrictions</h2>
+      <p>You may not:</p>
+      <ul>
+        <li>Reverse-engineer, decompile, or modify the Extension except as permitted by law.</li>
+        <li>Redistribute, resell, or sublicense the Extension or its license keys.</li>
+        <li>Use the Extension in violation of applicable laws or GitHub's Terms of Service.</li>
       </ul>
 
-      <h2>Contact</h2>
-      <p>GitHub Issues: <a href="https://github.com/ousarotoki/PullMate-public" style="color:#58a6ff;">github.com/ousarotoki/PullMate-public</a><br/>Email: <a href="mailto:ousarotokistudio@gmail.com" style="color:#58a6ff;">ousarotokistudio@gmail.com</a></p>
+      <h2>6. Disclaimer</h2>
+      <p>The Extension is provided "as is" without warranty of any kind. The authors are not liable for any damages arising from its use.</p>
+
+      <h2>7. Changes</h2>
+      <p>These Terms may be updated from time to time. Continued use after changes constitutes acceptance of the new Terms.</p>
+
+      <h2>8. Contact</h2>
+      <p>For questions, refund requests, or support:</p>
+      <p>GitHub Issues: <a href="https://github.com/ousarotoki/PullMate-public">github.com/ousarotoki/PullMate-public</a><br/>Email: <a href="mailto:ousarotokistudio@gmail.com">ousarotokistudio@gmail.com</a></p>
     </div>
   </main>
   <footer>
