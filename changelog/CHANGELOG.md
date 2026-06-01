@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Review Checklist — markdown checklist for review tasks
 - Review Time Tracker — track time spent on reviews (Pro feature)
 - Onboarding Flow — first-install walkthrough
-- Pro License Activation — Lemon Squeezy license key activation with 7-day grace period
+- Pro License Activation — Dodo Payments license key activation with 7-day grace period
 - Settings Page — configure shortcuts, manage license, clear data
 - Popup UI — quick status, sidebar toggle, settings link
 - Sentry Error Monitoring — anonymous crash reporting with data sanitization

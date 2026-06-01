@@ -15,11 +15,11 @@ The Extension is offered under a freemium model:
 - **Free tier** — available at no cost with core features.
 - **Pro tier** — paid license required for additional features (unlimited notes, time tracker, custom templates).
 
-Pro licenses are sold via Lemon Squeezy. Payment processing, tax handling, and invoicing are handled by Lemon Squeezy under their terms. License keys are delivered by email after purchase.
+Pro licenses are sold via Dodo Payments. Payment processing, tax handling, and invoicing are handled by Dodo Payments under their terms. License keys are delivered by email after purchase.
 
 ## 4. Refund Policy
 
-Refunds for Pro license purchases are handled through Lemon Squeezy. You may request a refund within 14 days of purchase if the Extension does not function as described. To request a refund, contact support via the channels below.
+Refunds for Pro license purchases are handled through Dodo Payments. You may request a refund within 14 days of purchase if the Extension does not function as described. To request a refund, contact support via the channels below.
 
 Lifetime license refunds follow the same 14-day policy.
 

@@ -12,12 +12,12 @@ If enabled, anonymous error reports are sent to Sentry (`@sentry/browser`). Thes
 
 ## License Validation
 
-When you activate a Pro license key, the key is sent to Lemon Squeezy for validation. No other personal information is transmitted.
+When you activate a Pro license key, the key is sent to Dodo Payments for validation. No other personal information is transmitted.
 
 ## Third-Party Services
 
 - **Sentry** — error monitoring (opt-in via extension settings)
-- **Lemon Squeezy** — license key validation
+- **Dodo Payments** — license key validation
 
 ## Contact
 
