@@ -11,7 +11,7 @@
 - **File Filter Panel** — reviewed / unreviewed / pending sections with click-to-navigate
 - **Bot Comment Filter** — hide bot noise with one click or `Alt+B`
 - **Pending Comment Badge** — never forget to submit your review
-- **Review Checklist** — built-in templates (General, Security, Performance) with custom checklists
+- **Review Checklist** — General template included. Security & Performance templates and custom checklists with Pro
 - **Private Inline Notes** *(Pro)* — add notes on diff lines; Markdown export
 - **Review Time Tracker** *(Pro)* — auto-track time spent per PR with idle detection
 - **Keyboard Shortcuts** — `Alt+N/P/M/B/T/C` — fully configurable
