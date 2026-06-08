@@ -20,6 +20,6 @@
 
 ## Quick Start
 
-1. Install from the [Chrome Web Store](#) (coming soon)
+1. Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/pullmate/omkmhaoladfdhnmdghjlakmlbfjgpjfg)
 2. Open any GitHub pull request
 3. The PullMate sidebar appears automatically on the right
